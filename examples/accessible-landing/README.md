@@ -2,6 +2,20 @@
 
 A static, independent-service landing page, built as an application of the official Modern Web Guidance fork. No framework, build step, third-party font, account, or backend is required.
 
+## Visual guide and local inspection
+
+The 2026-11-23 showcase iteration turns the page into a visual explanation of its design decisions. Distinct editorial compositions cover semantic structure, keyboard focus, adaptable typography and color, motion preferences, the agent layer and the actual brief interaction. A guide map expands the practical scope into performance, privacy, complete processes and maintaining the work. This is the guidance applied to this example, not the complete Chrome catalogue or a substitute for all applicable WCAG criteria.
+
+`showcase.css` supplies the visual chapters and decorative section/element boundaries. Inspection boxes are on initially and can be toggled with a native button after JavaScript initializes. They follow real layout boxes, never intercept pointer events and do not implement accessibility remediation. Implementation explanations use native details/summary and remain available without JavaScript or the inspector.
+
+`showcase.js` is a separate optional module; it cannot block the independent worksheet initialization in `app.js`. It samples Intersection Observer entry/exit, intersection ratios and CSS-pixel bounds at defined thresholds. These are geometric samples, not continuous positions, occlusion checks, attention, reading, screen-reader tracking or conformance evidence. DOM focus is reported separately and is not labelled as proof of keyboard use. Section-level events never inspect or copy form values. The most-intersecting sampled section is displayed, not an inferred active reader.
+
+Events are retained only in this tab's memory, newest first, capped at 16; elapsed timestamps are seconds since the inspection module started. There is no network transmission, site storage or persistent identifier. The event list and passive metrics use `aria-live="off"` so scrolling does not produce a stream of announcements. The native pause toggle freezes observation and focus updates; Clear events removes the local history. Hidden tabs disconnect the observer, and resumption obtains fresh samples rather than treating an unobserved interval as measured time. Reduced-motion users start with telemetry paused, and changing that preference to reduced motion pauses it again. They may explicitly resume the passive stream.
+
+Intersection Observer absence leaves the page and DOM-focus explanation usable and marks viewport measurement unavailable. An optional text-size slider changes only its labelled specimen, not browser zoom or OS text size. A native toggle shifts decorative shapes on request; reduced motion gets the immediate state change without a transition. The page-position line uses a native CSS scroll timeline behind syntax and motion-preference checks. Unsupported browsers omit that decorative line; there is no scroll handler, polyfill or dependency.
+
+Current platform sources checked: [Intersection Observer](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API), [document visibility](https://developer.mozilla.org/en-US/docs/Web/API/Document/visibilityState), and [animation-timeline](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timeline). Source authoring does not establish execution in a browser. The updated page and both added assets returned HTTP 200; JavaScript parsing passed. Visual review, real viewport/focus event behavior, no-JavaScript fallback, zoom, print, assistive-technology use and native WebMCP remain unverified pending authorized real-use review.
+
 From this directory, run:
 
 ```sh
@@ -53,6 +67,11 @@ The official `modern-web-guidance` skill was searched before implementation and 
 - **`agentic-forms`**: I omit automatic submission, annotate one visible native form, and reuse its validation/result ("Browsers that do not support WebMCP will ignore the `tool*` attributes"). The experimental authoring opt-in is limited to this example; there is no claim of real native agent execution yet.
 - **`form-fields-automatically-fit-contents`**: I keep textarea width stable while enabling vertical growth with `field-sizing: content` ("Users will simply experience standard scrolling for overflowing content inside fixed-size inputs and textareas"). Unsupported browsers retain rows and native resizing, without a mirroring script or mandatory polyfill.
 - **`improve-text-layout-and-legibility`**: I balance short headings and refine wrapping only for selected prose ("DO NOT apply `text-wrap: balance` globally"). Unsupported wrapping properties are ignored, preserving ordinary readable line breaks.
+- **`scroll-progress-indicator`**: I keep the page-position line purely decorative and omit it when native CSS timelines are unavailable ("If the animation is only considered to be decorative, opt for Progressive Enhancement"). The timeline follows the animation shorthand so it is not reset.
+- **`motion`**: I keep chapter content visible before any enhancement and limit spatial transitions to the no-preference media query ("Keep the final state"). The optional shape interaction changes immediately with reduced motion, without waiting for an animation event.
+- **`html`**: I use native expandable implementation notes with accessible text links in their expanded content ("use `<details>` and `<summary>` for a native disclosure pattern without JS"). Inspection geometry is decorative rather than a focusable custom overlay.
+
+The showcase re-applies the `accessibility` guide's passive live-region rule: "Don't use live regions for interstitial states". Its event stream is silent unless someone navigates to it, and a pause control freezes the stream.
 
 ## Validation and remaining review
 

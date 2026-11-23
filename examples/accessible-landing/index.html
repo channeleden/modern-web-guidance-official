@@ -6,12 +6,14 @@
   <meta name="text-scale" content="scale">
   <meta name="color-scheme" content="light">
   <meta name="theme-color" content="#f7f8fc">
-  <meta name="description" content="Thoughtful, accessible web design and development. Clear content, purposeful interactions, and a useful project brief you can prepare privately.">
+  <meta name="description" content="Accessible web design made visible: explore structure, focus, adaptable layouts, motion, forms and optional agent interactions.">
   <meta name="referrer" content="no-referrer">
   <title>Accessible web design — good design opens doors</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="showcase.css">
   <script type="module" src="app.js"></script>
+  <script type="module" src="showcase.js"></script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -28,113 +30,67 @@
   }
   </script>
 </head>
-<body>
+<body data-inspect="true">
   <a class="skip-link" href="#main-title">Skip to main content</a>
-
+  <div class="reading-progress" aria-hidden="true"></div>
   <header class="site-header shell">
-    <a class="wordmark" href="#top">
-      <svg viewBox="0 0 32 32" aria-hidden="true" width="32" height="32"><path d="M3 12V3h9M20 3h9v9M29 20v9h-9M12 29H3v-9" fill="none" stroke="currentColor" stroke-width="3"/><path d="M10 16h12m-6-6v12" stroke="currentColor" stroke-width="2"/></svg>
-      <span>Accessible<br>web design</span>
-    </a>
-    <nav aria-label="Primary">
-      <ul>
-        <li><a href="#services">What I build</a></li>
-        <li><a href="#approach">The approach</a></li>
-        <li><a class="nav-cta" href="#brief">Prepare a brief</a></li>
-      </ul>
-    </nav>
+    <a class="wordmark" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true" width="32" height="32"><path d="M3 12V3h9M20 3h9v9M29 20v9h-9M12 29H3v-9" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="16" cy="16" r="5" fill="currentColor"/></svg><span>Accessible<br>web design</span></a>
+    <nav aria-label="Primary"><ul><li><a href="#structure">Explore the details</a></li><li><a href="#guide-map">Guide map</a></li><li><a class="nav-cta" href="#brief">Prepare a brief</a></li></ul></nav>
   </header>
-
   <main id="top">
-    <section class="hero shell">
-      <div class="hero-copy">
-        <p class="eyebrow"><span class="small-mark" aria-hidden="true"></span> Independent design &amp; development</p>
-        <h1 id="main-title" tabindex="-1">Good design<br>opens <em>doors.</em></h1>
-        <p class="hero-intro">Your website should welcome people in—and help them do what they came to do.</p>
-        <p class="hero-description">I build clear, distinctive websites with accessibility considered from the first idea to the final interaction.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#brief">Prepare a brief</a>
-          <a class="text-link" href="#approach">The approach</a>
-        </div>
-        <p class="microcopy">Start with your idea. Keep a brief you can use.</p>
-      </div>
-
-      <figure class="hero-art">
-        <div class="art-topline"><span>DESIGNED TO WELCOME</span><span aria-hidden="true">↗</span></div>
-        <div class="doorway" aria-hidden="true">
-          <div class="doorway-inner"><span class="open-word">Open.</span><span class="doorway-arrow">↗</span></div>
-          <span class="focus-corner corner-a"></span><span class="focus-corner corner-b"></span>
-          <span class="focus-corner corner-c"></span><span class="focus-corner corner-d"></span>
-        </div>
-        <figcaption><span class="caption-label">A SIMPLE PRINCIPLE</span><span>More people.<br>Fewer barriers.</span></figcaption>
-        <span class="art-coordinate" aria-hidden="true">ACCESS BY DESIGN</span>
-      </figure>
+    <section class="showcase-hero shell observed-section" id="welcome" data-section="The welcome">
+      <div class="inspection-line"><span>ACCESSIBLE BY DESIGN / AN OPEN EXPLORATION</span><span data-section-status>Telemetry available with JavaScript</span></div>
+      <div class="hero-editorial"><div><p class="eyebrow">Independent design &amp; development</p><h1 id="main-title" tabindex="-1">Good design.<br><em>Wide open.</em></h1><p class="hero-intro">Expressive on the surface.<br>Considered all the way through.</p><p class="hero-description">I build distinctive websites that make room for more people. Explore the decisions behind this one, from the structure you read to the focus you can follow.</p><div class="hero-actions"><a class="button button-dark" href="#structure">Explore the details</a><a class="text-link" href="#brief">Prepare a brief</a></div></div>
+      <div class="visual-mosaic" aria-hidden="true"><div class="mosaic-type"><span>Space to be</span><strong>Aa</strong><span>YOURSELF.</span></div><div class="mosaic-orbit"><svg viewBox="0 0 240 240"><circle cx="120" cy="120" r="92"/><ellipse cx="120" cy="120" rx="45" ry="92"/><ellipse cx="120" cy="120" rx="92" ry="45"/><path d="M28 120h184M120 28v184"/><circle class="orbit-center" cx="120" cy="120" r="18"/></svg></div><div class="mosaic-key"><span>Every way in.</span><strong>Tab</strong><span>FOCUS HAS A PLACE.</span></div><div class="mosaic-open"><span>Access is in<br>the details.</span><i></i><i></i><i></i></div></div></div>
+      <p class="hero-footnote">A working demonstration of design decisions. WCAG 2.2 AA is the target; conformance requires scoped, real-use review.</p>
     </section>
 
-    <div class="principles-band">
-      <ul class="shell principles" role="list">
-        <li><span class="principle-icon" aria-hidden="true">↹</span><span><strong>Keyboard included.</strong> A clear way through.</span></li>
-        <li><span class="principle-icon" aria-hidden="true">Aa</span><span><strong>Room to zoom.</strong> Content that adapts.</span></li>
-        <li><span class="principle-icon" aria-hidden="true">≈</span><span><strong>Motion with care.</strong> You set the pace.</span></li>
-      </ul>
-    </div>
+    <aside class="inspector shell" id="inspector" aria-labelledby="inspector-heading">
+      <div class="inspector-heading"><div><p class="eyebrow">See beneath the surface</p><h2 id="inspector-heading">The page can explain itself.</h2></div><p>Keep the visual boundaries on, explore a section, then open its implementation notes. Solid outlines show sampled viewport intersection; double outlines show DOM focus within. Every explanation also works without the inspection layer.</p></div>
+      <div class="inspector-controls" id="inspector-controls" hidden><button type="button" class="button button-dark" id="inspection-toggle" aria-pressed="true">Inspection boxes</button><button type="button" class="button button-outline" id="telemetry-pause" aria-pressed="false">Pause telemetry</button><button type="button" class="text-link" id="clear-events">Clear events</button><a class="text-link" href="#telemetry-events">View local events</a></div>
+      <p class="microcopy" id="telemetry-state">Live telemetry needs JavaScript. The guide and implementation notes below remain available.</p>
+      <dl class="telemetry-overview" aria-live="off"><div><dt>Viewport sample</dt><dd id="viewport-section">Not measured yet</dd></div><div><dt>DOM focus</dt><dd id="focused-section">Not measured yet</dd></div><div><dt>Motion preference</dt><dd id="motion-preference">Browser preference respected by CSS</dd></div><div><dt>Data destination</dt><dd>This tab only</dd></div></dl>
+      <details class="event-disclosure"><summary id="telemetry-events">Local section events</summary><p>Viewport intersection and DOM focus are separate signals. Neither proves attention, reading, assistive-technology use or compliance. Bounds are sampled CSS pixels; intersections do not account for every occlusion. Latest 16 events, newest first. No field values, identifiers, storage or network requests.</p><ol id="event-list" class="event-list" aria-live="off"><li>No events recorded yet.</li></ol></details>
+    </aside>
 
-    <section class="services shell section-space" id="services">
-      <div class="section-heading">
-        <p class="eyebrow">What I build</p>
-        <h2>Access belongs<br>in the <em>design.</em></h2>
-        <p>A good website brings your message, your goals, and the people using it into the same picture.</p>
-      </div>
-      <div class="service-rows">
-        <article class="service-row">
-
-          <div><h3>A new website,<br>thought through.</h3><p>For a service, an independent business, or an idea ready for a home. A clear story, a distinctive visual direction, and useful next steps.</p><p class="deliverable">Structure · Content · Design · Development</p></div>
-          <svg class="service-symbol" viewBox="0 0 64 64" aria-hidden="true"><path d="M12 52V12h40v40M24 52V24h16v28M4 52h56" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-        </article>
-        <article class="service-row">
-
-          <div><h3>A clearer way<br>to get things done.</h3><p>Turn a confusing journey into one people can follow. Better navigation, readable content, and forms that explain what they need.</p><p class="deliverable">User journeys · Navigation · Forms · Interactions</p></div>
-          <svg class="service-symbol" viewBox="0 0 64 64" aria-hidden="true"><path d="M8 48h16V32h16V16h16m-12 0h12v12" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8" cy="48" r="4" fill="currentColor"/></svg>
-        </article>
-        <article class="service-row">
-
-          <div><h3>A better version<br>of what’s there.</h3><p>Keep what works and address the barriers. I can help prioritize and improve an existing site, with the changes and remaining gaps made clear.</p><p class="deliverable">Review · Priorities · Improvements · Handoff</p></div>
-          <svg class="service-symbol" viewBox="0 0 64 64" aria-hidden="true"><rect x="10" y="10" width="44" height="44" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m20 33 8 8 17-18" fill="none" stroke="currentColor" stroke-width="2"/></svg>
-        </article>
-      </div>
+    <section class="structure-scene observed-section" id="structure" data-section="Structure and meaning">
+      <div class="shell scene-inner"><div class="inspection-line"><span>STRUCTURE / MEANING BEFORE DECORATION</span><span data-section-status>Telemetry available with JavaScript</span></div>
+      <div class="structure-layout"><div class="scene-copy"><p class="eyebrow">A clear way in</p><h2>Beautiful to see.<br><em>Easy to navigate.</em></h2><p>The page has a shape even when you cannot see its layout. Landmarks, headings and useful link names give people and browser agents a map.</p><a class="text-link" href="#keyboard">Explore keyboard access</a></div><figure class="document-map" data-inspect-target="Semantic document"><div class="map-row"><code>&lt;header&gt;</code><span>A familiar starting point</span></div><div class="map-row map-main"><code>&lt;main&gt;</code><div><span class="map-heading">One clear subject.</span><div class="map-section"><code>&lt;section&gt;</code><span>Ideas with headings</span></div><div class="map-section"><code>&lt;section&gt;</code><span>A useful next step</span></div></div></div><div class="map-row"><code>&lt;footer&gt;</code><span>Context and sources</span></div><figcaption>The visible design sits on the same reading order as the document.</figcaption></figure></div>
+      <details class="implementation-notes"><summary>How structure is implemented</summary><div class="notes-grid"><div><h3>The strategy</h3><p>One main landmark, one h1, sequential headings and named navigation. The skip link lands on the main heading. Real links navigate; real buttons perform actions.</p></div><div><h3>The enhancement and fallback</h3><p>CSS gives the document its visual rhythm. Remove it and the content stays in order. Decorative geometry is hidden from assistive technology; information stays in text.</p></div><div><h3>The source and review</h3><p>Heading and landmark navigation still need a real screen-reader review. <a href="https://www.w3.org/WAI/tutorials/page-structure/">WAI page structure</a> · <a href="https://developer.chrome.com/docs/modern-web-guidance">Modern Web Guidance</a></p></div></div></details></div>
     </section>
 
-    <section class="approach section-space" id="approach">
-      <div class="shell">
-        <div class="approach-heading">
-          <div><p class="eyebrow">The approach</p><h2>Thoughtful details.<br><em>Practical progress.</em></h2></div>
-          <p>Start with what people need to do. Make the path clear. Check it in real use. Leave you with something you can look after.</p>
-        </div>
-        <ol class="process-grid" role="list">
-          <li><span class="step-number" aria-hidden="true">01 <span>↗</span></span><h3>Understand.</h3><p>Your audience, the jobs your site needs to do, and the barriers worth solving first.</p><p class="step-result">A shared direction</p></li>
-          <li><span class="step-number" aria-hidden="true">02 <span>↗</span></span><h3>Make it clear.</h3><p>Shape the content and design around readable information and confident next steps.</p><p class="step-result">A design to review</p></li>
-          <li><span class="step-number" aria-hidden="true">03 <span>↗</span></span><h3>Build with care.</h3><p>Develop responsive pages with familiar controls, visible focus, and purposeful feedback.</p><p class="step-result">A working website</p></li>
-          <li><span class="step-number" aria-hidden="true">04 <span>↗</span></span><h3>Check &amp; hand over.</h3><p>Agree the checks, document the findings, and explain how to maintain the work.</p><p class="step-result">A clear handoff</p></li>
-        </ol>
-        <div class="approach-note"><span class="note-mark" aria-hidden="true">+</span><p><strong>Standards guide the work. People give it meaning.</strong><br>I use WCAG 2.2 AA as the accessibility target, with the scope and evidence agreed for each project. A checklist alone can’t tell you how a website feels to use.</p></div>
-      </div>
+    <section class="keyboard-scene observed-section" id="keyboard" data-section="Keyboard and focus">
+      <div class="shell scene-inner"><div class="inspection-line"><span>INTERACTION / EVERY WAY THROUGH</span><span data-section-status>Telemetry available with JavaScript</span></div>
+      <div class="keyboard-heading"><div><p class="eyebrow">Your place is always visible</p><h2>Follow the<br><em>focus.</em></h2></div><p>Try Tab to move between controls, Shift + Tab to return, and Enter to follow a link. The focus ring belongs to the control. The inspection box explains the larger section.</p></div>
+      <div class="key-composition" aria-hidden="true"><span class="large-key">Tab <small>NEXT</small></span><span class="key-path"><i></i><i></i><i></i></span><span class="large-key key-selected">Enter <small>ACTIVATE</small></span></div>
+      <div class="focus-practice" data-inspect-target="Real keyboard controls"><span>Try the actual controls:</span><a href="#adaptation" class="practice-link">Explore adaptable type</a><a href="#brief" class="practice-link">Prepare a brief</a></div>
+      <details class="implementation-notes"><summary>How keyboard access is implemented</summary><div class="notes-grid"><div><h3>The strategy</h3><p>Source order is focus order. No positive tabindex, trapped keyboard route or hover-only information. Large control targets help touch and pointer use too.</p></div><div><h3>The enhancement and fallback</h3><p>A solid outline with offset makes focus visible. Hover gets the same visual emphasis. Forced-color mode uses system colors and a real outline, rather than relying on a shadow.</p></div><div><h3>The source and review</h3><p>Actual keyboard navigation must confirm that focus stays visible and unobscured at zoom. <a href="https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html">WCAG Focus Visible</a> · <a href="https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html">Target Size</a></p></div></div></details></div>
     </section>
 
-    <section class="details-section shell section-space" id="questions">
-      <div class="section-heading"><p class="eyebrow">Good to know</p><h2>Clear from<br>the <em>start.</em></h2></div>
-      <div class="questions">
-        <details><summary>Does accessible mean plain?</summary><div class="details-content"><p>It means making deliberate choices. Expressive type, strong color, thoughtful layouts, and satisfying interactions can sit alongside clear reading, useful feedback, and familiar controls.</p><p>The experience should make sense with a mouse, a keyboard, a touch screen, or assistive technology.</p></div></details>
-        <details><summary>Can you improve my existing website?</summary><div class="details-content"><p>Yes. The right starting point may be a focused improvement rather than a full rebuild. Share the parts people struggle with, what your site runs on, and what you want to preserve.</p><p>I’ll use that context to discuss a sensible scope. Some changes depend on the access and flexibility your current platform provides.</p></div></details>
-        <details><summary>What does an accessibility target mean?</summary><div class="details-content"><p>WCAG describes testable accessibility requirements. I work toward the agreed target and document the pages, interactions, checks, and any gaps in scope.</p><p>A target is not a certification or a guarantee of legal compliance. Real review includes keyboard use, zoom and reflow, and assistive technology, with disabled-user feedback where it is included in the project.</p></div></details>
-        <details><summary>What should I have ready?</summary><div class="details-content"><p>An idea is enough to start a brief: who your site is for, what they need to do, and what is getting in the way. An existing website, content, or a timeline can help, but you do not need a finished specification.</p><p>The worksheet below helps you organize those thoughts without sending them anywhere.</p></div></details>
-      </div>
+    <section class="adaptation-scene observed-section" id="adaptation" data-section="Typography and reflow">
+      <div class="shell scene-inner"><div class="inspection-line"><span>LAYOUT / ROOM TO CHANGE</span><span data-section-status>Telemetry available with JavaScript</span></div>
+      <div class="adaptation-layout"><div class="type-specimen" data-inspect-target="Flexible type specimen"><span class="specimen-mark" aria-hidden="true">Aa</span><div class="specimen-copy" id="type-specimen"><h3>More room.<br>Same meaning.</h3><p>Words can grow. Lines can wrap. The idea stays intact.</p><a href="#motion">Explore motion choices</a></div><div class="type-controls" id="type-controls" hidden><label for="type-scale">Preview text size <output id="type-scale-value" for="type-scale">1.0×</output></label><input id="type-scale" type="range" min="1" max="1.6" step="0.1" value="1" aria-describedby="type-scale-hint"><p id="type-scale-hint">Changes only this specimen. Browser zoom and your text settings control the whole page.</p></div></div>
+      <div class="scene-copy"><p class="eyebrow">Make space, rather than squeeze</p><h2>Content sets<br><em>the pace.</em></h2><p>Expressive typography works best when it can breathe. Relative sizes, flexible columns and generous line lengths make space for different screens and settings.</p><div class="color-pair" aria-hidden="true"><span>Ink<br>on lilac.</span><span>Clear<br>by contrast.</span></div><p class="microcopy">Color supports the message; labels, borders and text carry it too.</p></div></div>
+      <details class="implementation-notes"><summary>How type, color and reflow are implemented</summary><div class="notes-grid"><div><h3>The strategy</h3><p>Relative type, no root font-size override, no zoom restriction and no fixed-height text boxes. Layout collapses into source order. Text and control states do not rely on color alone.</p></div><div><h3>The enhancement and fallback</h3><p>Balanced headings and selected pretty-wrapped prose fall back to normal line breaks. Growing textareas use field-sizing when supported, with native resizing and scrolling otherwise.</p></div><div><h3>The source and review</h3><p>This specimen is illustrative; it does not prove page-wide zoom behavior. Actual reflow, contrast, text-spacing and OS scale need review. <a href="https://www.w3.org/WAI/WCAG22/Understanding/reflow.html">WCAG Reflow</a> · <a href="https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html">Contrast Minimum</a></p></div></div></details></div>
     </section>
 
-    <section class="brief-section section-space" id="brief">
+    <section class="motion-scene observed-section" id="motion" data-section="Motion and preferences">
+      <div class="shell scene-inner"><div class="inspection-line"><span>MOTION / INVITATION, NEVER INTERRUPTION</span><span data-section-status>Telemetry available with JavaScript</span></div>
+      <div class="motion-layout"><div class="scene-copy"><p class="eyebrow">A response you can feel</p><h2>A little movement.<br><em>A lot of care.</em></h2><p>Hover and focus reactions give feedback. Movement explains a change. Nothing needs to fly in before you can read it.</p><button type="button" class="button button-dark" id="motion-toggle" aria-pressed="false" hidden>Shift the shapes</button><p class="microcopy">An optional, decorative response. Reduced-motion preferences keep the change immediate.</p></div><div class="motion-composition" id="motion-composition" aria-hidden="true"><div class="motion-orbit"></div><div class="motion-disc"></div><div class="motion-square"></div><span>MOVE WITH<br>INTENTION.</span></div></div>
+      <details class="implementation-notes"><summary>How motion and activity are implemented</summary><div class="notes-grid"><div><h3>The strategy</h3><p>Content is visible from the start. Spatial transitions only run when reduced motion is not requested. There is no autoplay, parallax, scroll hijacking or time-limited content.</p></div><div><h3>The enhancement and fallback</h3><p>A CSS scroll timeline draws the decorative page-position line when supported. Otherwise it is omitted; no polyfill or scroll listener is needed. The section observer is separate from the animation.</p></div><div><h3>The source and review</h3><p>Telemetry can be paused and stops updating in hidden tabs. It reports geometry and DOM focus, not attention or reading. <a href="https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html">Animation from Interactions</a> · <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API">Intersection Observer</a></p></div></div></details></div>
+    </section>
+
+    <section class="agent-scene observed-section" id="agents" data-section="Agent interactions">
+      <div class="shell scene-inner"><div class="inspection-line"><span>AGENT LAYER / THE SAME VISIBLE ACTION</span><span data-section-status>Telemetry available with JavaScript</span></div>
+      <div class="agent-layout"><div class="scene-copy"><p class="eyebrow">Frontier where it helps</p><h2>Another way in.<br><em>You stay in control.</em></h2><p>A compatible browser agent can help fill the visible brief. You review the answers before preparing it. There is one action and one honest result.</p><a class="button button-light" href="#brief">Prepare a brief</a><p class="microcopy">WebMCP is experimental. Native execution has not been verified here.</p></div><div class="agent-layers" data-inspect-target="Progressive enhancement layers"><div><span class="layer-label">ALWAYS</span><h3>Readable HTML</h3><p>Content, navigation, native controls.</p></div><div><span class="layer-label">WITH JAVASCRIPT</span><h3>A local draft</h3><p>Validate, prepare, review, copy.</p></div><div><span class="layer-label">EXPERIMENTAL</span><h3>Browser-agent help</h3><p>The same form. Human review.</p></div></div></div>
+      <details class="implementation-notes"><summary>How the agent layer is implemented</summary><div class="notes-grid"><div><h3>The strategy</h3><p>Optional declarative WebMCP annotates the enhanced native form. No toolautosubmit and no duplicate imperative registration. Structured page metadata describes only the visible service.</p></div><div><h3>The enhancement and fallback</h3><p>Unsupported browsers ignore the tool attributes. The regular worksheet and downloadable template remain available. Nothing calls a model, collects credentials or sends an enquiry.</p></div><div><h3>The source and review</h3><p>Example-local authoring opt-in does not activate an origin trial. A real compatible browser is needed to verify the native agent flow. <a href="https://developer.chrome.com/docs/ai/webmcp/declarative-api">Chrome declarative WebMCP</a></p></div></div></details></div>
+    </section>
+    <section class="brief-section section-space observed-section" id="brief" data-section="The project brief">
+      <div class="shell inspection-line"><span>FORM / LOCAL ACTION</span><span data-section-status>Telemetry available with JavaScript</span></div>
       <div class="shell brief-layout">
-        <div class="brief-intro"><p class="eyebrow">Your next step</p><h2>What door<br>could we <em>open?</em></h2><p>Tell the story of your project in a few simple notes. You’ll have a brief to review, keep, and share when you choose.</p><div class="privacy-note"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><p><strong>This is a private worksheet.</strong><br>Your notes stay on this page. Nothing is sent, and I won’t receive a request. Keep a copy before you leave.</p></div><p class="brief-context">You don’t need to include personal, medical, or other sensitive information.</p></div>
+        <div class="brief-intro"><p class="eyebrow">Try the complete interaction</p><h2>A useful next step.<br><em>On your terms.</em></h2><p>Tell the story of your project in a few simple notes. You’ll have a brief to review, keep, and share when you choose.</p><div class="privacy-note"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 10V7a4 4 0 0 1 8 0v3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg><p><strong>This is a private worksheet.</strong><br>Your notes stay on this page. Nothing is sent, and I won’t receive a request. Keep a copy before you leave.</p></div><p class="brief-context">You don’t need to include personal, medical, or other sensitive information.</p></div>
 
-        <div class="brief-workspace">
+        <div class="brief-workspace" data-inspect-target="Native controls">
           <h3 class="worksheet-title" id="brief-heading">Your project brief</h3>
           <p class="form-instructions">Two fields are required. Everything else is optional.</p>
           <p id="worksheet-baseline" class="baseline-note">Use this worksheet to organize your thoughts. You can also <a href="brief-template.txt" download>download the brief template (.txt)</a> and fill it in with your preferred text editor. Copy and download tools for your completed answers appear when JavaScript is available.</p>
@@ -165,12 +121,28 @@
           </section>
         </div>
       </div>
+      <div class="shell"><details class="implementation-notes"><summary>How the brief works</summary><div class="notes-grid"><div><h3>Native controls, explicit feedback.</h3><p>Labels persist. Required fields and length limits are declared in HTML. Validation links corrective text to a field, and moves focus to the first invalid answer or the prepared result.</p></div><div><h3>Useful without enhancement.</h3><p>Without JavaScript, the controls have no form owner and cannot send your notes. A downloadable text template remains available. Clipboard failure leaves selectable text; no object URL means no download action, with text and printing still available.</p></div><div><h3>Review still matters.</h3><p>Keyboard, screen-reader, print and mobile behavior need actual review. This prepares a draft, not an enquiry. <a href="https://www.w3.org/WAI/tutorials/forms/notifications/">WAI form notifications</a></p></div></div></details></div>
+    </section>
+
+    <section class="guide-section shell section-space observed-section" id="guide-map" data-section="Guide map and evidence">
+      <div class="inspection-line"><span>REFERENCE / THE DECISIONS BEHIND THE DESIGN</span><span data-section-status>Telemetry available with JavaScript</span></div>
+      <div class="guide-heading"><p class="eyebrow">A practical map of the guidance</p><h2>The details add up.<br><em>The evidence matters.</em></h2><p>Explore the strategy, how this page applies it, and what a real delivery still needs to establish. This is a map of the practices used here, not the entire WCAG standard or Chrome catalogue.</p></div>
+      <div class="guide-index">
+        <details open><summary>Structure, content and navigation</summary><div class="guide-answer"><p>Keep a meaningful outline, descriptive links and source order. This page uses landmarks, one h1, headings for each topic and a skip link. Decorative visuals never carry the only explanation.</p><p><strong>Delivery evidence:</strong> review heading/landmark navigation with actual assistive technology; check link purpose and reading order. <a href="#structure">Explore structure</a>.</p></div></details>
+        <details><summary>Contrast, typography and responsive layout</summary><div class="guide-answer"><p>Choose readable color pairs, retain text cues for states, respect browser text preferences and let content reflow. Relative sizing and intrinsic grids come first; advanced wrapping is optional.</p><p><strong>Delivery evidence:</strong> measure actual text/control contrast, inspect narrow layouts and zoom, increased spacing, forced colors and device text scale. <a href="#adaptation">Explore adaptable type</a>.</p></div></details>
+        <details><summary>Keyboard, pointer and touch interactions</summary><div class="guide-answer"><p>Use native interactions, visible focus and generous targets. No custom keyboard emulation is added to native controls. Hover is supplementary; implementation notes expand with a click, touch or keyboard.</p><p><strong>Delivery evidence:</strong> traverse the actual journey in both directions; verify targets and focus are reachable, visible and unobscured. <a href="#keyboard">Explore keyboard access</a>.</p></div></details>
+        <details><summary>Motion, observation and progressive enhancement</summary><div class="guide-answer"><p>Start from a complete static page. CSS timelines and user-triggered transitions add polish without hiding content. Local observation samples section intersections and focus changes; pausing freezes updates, and background tabs stop observation.</p><p><strong>Delivery evidence:</strong> exercise reduced motion, unavailable APIs, pause/resume and actual enter/leave events. No activity measurement is a compliance score. <a href="#motion">Explore motion choices</a>.</p></div></details>
+        <details><summary>Forms, errors and reliable completion</summary><div class="guide-answer"><p>Persist labels and hints, explain requirements, connect errors and preserve a clear recovery route. The worksheet prepares local text, invalidates a stale draft after edits and offers explicit copy/download actions.</p><p><strong>Delivery evidence:</strong> complete the actual form, correct errors and review the resulting text, clipboard, download and print behavior. A future receiving endpoint needs server validation and accurate success feedback. <a href="#brief">Prepare a brief</a>.</p></div></details>
+        <details><summary>Agent readiness and truthful discovery</summary><div class="guide-answer"><p>Semantic HTML is the baseline. Optional agent annotations reuse the visible action, its validation and its result. Metadata invents no rating, availability, price or certification.</p><p><strong>Delivery evidence:</strong> verify the actual native browser-agent environment before claiming support. A mocked API or ignored attribute proves no native execution. <a href="#agents">Explore agent interactions</a>.</p></div></details>
+        <details><summary>Performance, privacy and resilience</summary><div class="guide-answer"><p>This static page uses system fonts and local assets, with no framework, third-party scripts, remote analytics or model calls. Separate enhancement modules contain optional failures. No layout or animation depends on a scroll handler.</p><p><strong>Delivery evidence:</strong> measure real loading and interactions on target devices, inspect network requests and review the hosting policy. This page makes no speed score or savings claim. <a href="README.md">Read implementation notes and sources</a>.</p></div></details>
+        <details><summary>Standards, legal scope and maintaining the work</summary><div class="guide-answer"><p>WCAG 2.2 AA is the design target. Applicable laws may specify another version and additional obligations. An accessible landing page cannot establish conformance of a connected checkout, booking system, document or service.</p><p><strong>Delivery evidence:</strong> agree the audience, jurisdiction, pages and complete processes; record actual checks and remaining gaps; assign ownership for future changes. <a href="https://www.w3.org/TR/WCAG22/#conformance-reqs">Read WCAG conformance requirements</a>.</p></div></details>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer shell">
     <div class="footer-top"><p class="footer-line">Make room for<br><em>more people.</em></p><a class="text-link" href="#top">Back to top</a></div>
-    <details class="accessibility-statement" id="accessibility"><summary>About accessibility, privacy, and this page</summary><div class="statement-grid details-content"><div><h2>Built with access in mind.</h2><p>This page uses semantic headings, native controls, visible keyboard focus, and layouts designed to reflow. It respects reduced-motion and forced-color preferences, leaves browser zoom available, and keeps essential information out of hover-only effects.</p><p>The design target is WCAG 2.2 AA, with stronger focus indicators and generous control targets. This is a working reference page, not a certified or fully audited conformance claim. Browser, assistive-technology, and disabled-user review are still needed.</p></div><div><h2>Your notes stay with you.</h2><p>The brief tool does not send requests, store notes in site storage, or load analytics. With JavaScript, it prepares text on this page and lets you explicitly copy or download it. Without JavaScript, you can use the native worksheet or download a text template to fill in your own editor.</p><p>In compatible experimental browsers, WebMCP form annotations let a browser agent help fill the same visible form. You review it before preparing the brief. Experimental support is optional; ordinary controls remain available.</p><p><a href="https://www.w3.org/TR/WCAG22/">Read the WCAG 2.2 standard</a> · <a href="README.md">Implementation notes and sources</a></p></div></div></details>
+    <details class="accessibility-statement" id="accessibility"><summary>About accessibility, privacy, and this page</summary><div class="statement-grid details-content"><div><h2>Built with access in mind.</h2><p>This page demonstrates semantic headings, native controls, visible keyboard focus, and layouts designed to reflow. Section boundaries and implementation notes explain design choices; they are not an accessibility-remediation overlay. It respects reduced-motion and forced-color preferences, leaves browser zoom available, and keeps essential information out of hover-only effects.</p><p>The design target is WCAG 2.2 AA, with stronger focus indicators and generous control targets. This is a working reference page, not a certified or fully audited conformance claim. Browser, assistive-technology, and disabled-user review are still needed.</p></div><div><h2>Your notes stay with you.</h2><p>The brief tool and local inspection layer do not send requests, store notes or events in site storage, or load analytics. The inspection layer records section geometry and DOM-focus events in memory only; it never records your field values. Pause it or clear its bounded event history at any time. With JavaScript, it prepares text on this page and lets you explicitly copy or download it. Without JavaScript, you can use the native worksheet or download a text template to fill in your own editor.</p><p>In compatible experimental browsers, WebMCP form annotations let a browser agent help fill the same visible form. You review it before preparing the brief. Experimental support is optional; ordinary controls remain available.</p><p><a href="https://www.w3.org/TR/WCAG22/">Read the WCAG 2.2 standard</a> · <a href="README.md">Implementation notes and sources</a></p></div></div></details>
     <div class="footer-bottom"><p>Accessible web design · Independent design &amp; development</p><p>Clarity is a kind of welcome.</p></div>
   </footer>
 </body>
