@@ -1,0 +1,22 @@
+PROJECT BRIEF
+
+Project name:
+
+Starting point (a new website / an existing website / still exploring):
+
+WHO IT IS FOR
+Who needs to use it, and in what situations?
+
+
+WHAT PEOPLE SHOULD BE ABLE TO DO
+For example: understand a service, find information, or complete a booking.
+
+
+ADDITIONAL CONTEXT
+Current barriers, platform, timing, or what success would look like.
+You do not need to include personal, medical, or other sensitive information.
+
+
+Accessible web design — project brief worksheet.
+Fill in this file in your preferred text editor and save a copy.
+Nothing is sent. Review before sharing.
